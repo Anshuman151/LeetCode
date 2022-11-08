@@ -7,7 +7,6 @@ class Solution:
     def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
         sentinel = ListNode(0)
         sentinel.next = head
-        
         prev, curr = sentinel, head
         while curr:
             if curr.val == val:
@@ -15,5 +14,4 @@ class Solution:
             else:
                 prev = curr
             curr = curr.next
-        
         return sentinel.next
