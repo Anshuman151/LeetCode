@@ -1,12 +1,12 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        a = []
-        i=0
-        while i < len(nums):
-            if nums[i] not in a:
-                a.append(nums[i])
-            elif nums[i] in a:
-                a.remove(nums[i])
-            i+=1
-        return a[0]
+        a = {}
+        for i in nums:
+            if i in a:
+                a[i] += 1
+            else:
+                a.setdefault(i,1)
+        for i in a:
+            if a[i] == 1:
+                return i
             
